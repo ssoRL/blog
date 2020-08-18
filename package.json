@@ -1,0 +1,54 @@
+{
+  "name": "gatsby-typescript-starter-blog",
+  "private": true,
+  "description": "Gatsby/Typescript Starter for blogs project",
+  "version": "0.1.0",
+  "author": "Pierre-Alexis Blond",
+  "dependencies": {
+    "@types/react-helmet": "^5.0.11",
+    "bootstrap": "^4.3.1",
+    "gatsby": "^2.15.34",
+    "gatsby-image": "^2.2.25",
+    "gatsby-plugin-manifest": "^2.2.21",
+    "gatsby-plugin-offline": "^3.0.14",
+    "gatsby-plugin-react-helmet": "^3.1.11",
+    "gatsby-plugin-sass": "^2.1.18",
+    "gatsby-plugin-sharp": "^2.2.29",
+    "gatsby-plugin-typescript": "^2.1.12",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-remark-images": "^3.1.26",
+    "gatsby-source-filesystem": "^2.1.31",
+    "gatsby-transformer-remark": "^2.6.28",
+    "gatsby-transformer-sharp": "^2.2.21",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.8.3",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.7.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "type-check": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PABlond/Gatsby-TypeScript-Starter-Blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PABlond/Gatsby-TypeScript-Starter-Blog/issues"
+  }
+}

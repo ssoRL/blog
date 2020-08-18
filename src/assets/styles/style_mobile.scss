@@ -1,0 +1,112 @@
+@media only screen and (max-width: 768px) {
+  // ****************************************************
+  // ****************************************************
+  //                          Header
+  // ****************************************************
+  // ****************************************************
+
+  #header {
+    display: block;
+    h1 {
+      text-align: center;
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      a {
+      }
+    }
+  }
+
+  // ****************************************************
+  // ****************************************************
+  //                          Posts
+  // ****************************************************
+  // ****************************************************
+
+  #ui-posts-selector {
+    display: none;
+  }
+
+  #posts {
+    #old-posts {
+      #old-posts-content {
+        display: block;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+
+      #old-posts-pagination {
+        justify-content: center;
+      }
+    }
+  }
+
+  // ****************************************************
+  // ****************************************************
+  //                          Footer
+  // ****************************************************
+  // ****************************************************
+
+  #footer {
+    display: block;
+    text-align: center;
+  }
+
+  // ****************************************************
+  // ****************************************************
+  //                          Post page
+  // ****************************************************
+  // ****************************************************
+
+  #post {
+    #post-title {
+      font-size: 2rem;
+    }
+
+    #cover-image {
+      max-height: 500px;
+      width: auto !important;
+      img {
+        position: relative !important;
+        max-height: 500px;
+        width: 100% !important;
+      }
+    }
+
+    #post-content {
+      h1 {
+        font-size: 1.7rem;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      pre {
+        margin: 0;
+        padding: 0.5rem;
+        border-radius: 0;
+      }
+    }
+  }
+
+  #post-old-posts {
+    display: block;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
+
+    #old-posts {
+      #old-posts-content {
+        padding-right: 15px;
+        padding-left: 15px;
+        display: block;
+      }
+    }
+  }
+}
