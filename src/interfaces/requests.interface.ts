@@ -1,4 +1,4 @@
-import { GatsbyImageProps } from "gatsby-image/index"
+import { GatsbyImageProps, GatsbyImageFluidProps } from "gatsby-image/index"
 
 export interface IAllMarkdownRemark {
   edges: {
@@ -20,16 +20,7 @@ export interface IAllMarkdownRemark {
 }
 
 export interface ISiteMetadata {
-  author: string
-  authorDescription: string
-  description: string
-  title: string
-  socials: {
-    linkedin: string
-    twitter: string
-    github: string
-  }
-  themeColor: string
+  author: string,
   siteUrl: string
 }
 
@@ -37,22 +28,8 @@ export interface IHomeRequest {
   allMarkdownRemark: IAllMarkdownRemark
   site: {
     siteMetadata: {
-      author: string
-      authorDescription: string
-      description: string
-      title: string
-      socials: {
-        linkedin: string
-        twitter: string
-        github: string
-      }
-      themeColor: string
+      author: string,
       siteUrl: string
-    }
-  }
-  authorPicture: {
-    childImageSharp: {
-      fixed: any
     }
   }
 }
@@ -69,14 +46,11 @@ export interface IPostRequest {
       title: string
       date: string
       featuredImage: {
-        childImageSharp: GatsbyImageProps
+        childImageSharp: GatsbyImageFluidProps
       }
     }
   }
   site: {
     siteMetadata: ISiteMetadata
-  }
-  authorPicture: {
-    childImageSharp: GatsbyImageProps
   }
 }

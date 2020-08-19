@@ -1,17 +1,17 @@
 $grey: rgb(80, 80, 80);
 $dark: #0f1b07;
 $light: #fff;
-$main-color: #542C85;
+$hover-color: #542C85;
 
 body {
   min-height: 100vh;
   font-family: "Source Sans Pro", sans-serif;
-}
 
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", serif;
+  hr {
+    border: 0;
+    border-bottom: 2px solid $dark;
+    width: 75%;
+  }
 }
 
 // ****************************************************
@@ -22,18 +22,18 @@ h3 {
 
 #header {
   cursor: pointer;
-  background-color: $main-color;
   padding: 1rem;
   margin-bottom: 3rem;
   color: $light;
   display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
   justify-content: space-between;
 
-  h1 {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 3px;
-    font-weight: 800;
-    margin-bottom: 0;
+  hr {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
   }
 
   span {
@@ -62,11 +62,6 @@ h3 {
   p {
     color: $grey;
     margin-bottom: 0;
-  }
-
-  .author-picture {
-    margin-right: 0.5rem;
-    border-radius: 50%;
   }
 }
 
@@ -137,12 +132,12 @@ h3 {
 
     &:hover {
       transition: 0.6s;
-      color: $main-color;
+      color: $hover-color;
       opacity: 0.8;
 
       h3,
       .post-date {
-        color: $main-color;
+        color: $hover-color;
       }
     }
   }
@@ -201,12 +196,12 @@ h3 {
       transition: 0.8s;
 
       .post-content {
-        color: $main-color;
+        color: $hover-color;
         opacity: 0.8;
 
         h3,
         .post-date {
-          color: $main-color;
+          color: $hover-color;
         }
       }
     }
@@ -257,7 +252,7 @@ h3 {
       }
 
       &:hover {
-        color: $main-color !important;
+        color: $hover-color !important;
       }
     }
   }
@@ -306,15 +301,6 @@ h3 {
   p {
     margin-bottom: 0;
   }
-
-  #footer-socials {
-    a {
-      color: $main-color;
-      margin-left: 5px;
-      margin-right: 5px;
-      font-size: 2.5rem;
-    }
-  }
 }
 
 // ****************************************************
@@ -324,30 +310,22 @@ h3 {
 // ****************************************************
 
 #post {
+  #post-body {
+    width: 90vw;
+    margin: auto;
+    position: relative;
+    top: -3rem;
+    background: rgba(255,255,255,.6);
+    padding: 0 5vw 3rem;
+  }
+
   #post-title {
     font-weight: 600;
     margin-bottom: 2rem;
     text-align: center;
-    font-size: 3rem;
-    color: $main-color;
+    font-size: 4rem;
+    color: $dark;
     letter-spacing: 1px;
-  }
-
-  #cover-image {
-    max-height: 600px;
-    margin-bottom: 3rem;
-    
-    div {
-      padding-bottom: 0!important
-    }
-
-    img {
-      position: relative!important;
-      width: auto !important;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-    }
   }
 
   #post-content {
@@ -377,7 +355,7 @@ h3 {
     }
 
     a {
-      color: $main-color;
+      color: $hover-color;
     }
 
     pre {

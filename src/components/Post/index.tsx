@@ -1,13 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import "./../../assets/styles/style.scss"
-import { IPostRequest } from "./../../interfaces/requests.interface"
-import { GatsbyImageProps } from "gatsby-image/index"
+import { IPostRequest } from "../../interfaces/requests.interface"
 
 import Img from "gatsby-image"
-import Layout from './../Layout'
-import About from "./../About"
-import OlderPosts from "./../Posts/OldContent"
+import Layout from '../Layout'
+import OlderPosts from "../Posts/OldContent"
 
 export default ({ data }: { data: IPostRequest }) => {
   // Helper to organize useful data in request
@@ -17,7 +15,6 @@ export default ({ data }: { data: IPostRequest }) => {
       frontmatter: { featuredImage, title },
       html,
     },
-    authorPicture: { childImageSharp: authorPicture },
   } = data
   const imgProps = featuredImage.childImageSharp
   const content = data.allMarkdownRemark.edges.map(mod => {
@@ -33,14 +30,15 @@ export default ({ data }: { data: IPostRequest }) => {
   return (
     <Layout siteMetadata={siteMetadata} title={title}>
       <section id="post">
-        <h1 id="post-title">{title}</h1>
-        <div id="cover-image">
-          <Img {...(imgProps as GatsbyImageProps)} />
+          <Img
+            fluid={imgProps.fluid}
+            title={title}
+            alt={title}
+          />
+        <div id="post-body">
+          <h1 id="post-title">{title}</h1>
+          <div id="post-content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-        <div id="post-content" dangerouslySetInnerHTML={{ __html: html }} />
-      </section>
-      <section id="about-post">
-        <About siteMetadata={siteMetadata} authorPicture={authorPicture} />
       </section>
       <section id="post-old-posts">
         <OlderPosts content={content} title="Newest posts" />
@@ -80,11 +78,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 600) {
-              src
-              srcSet
-              sizes
-              aspectRatio
+            fluid(maxWidth: 2000, maxHeight: 500, cropFocus: CENTER) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -93,23 +88,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         author
-        authorDescription
-        description
-        title
-        socials {
-          linkedin
-          twitter
-          github
-        }
-        themeColor
         siteUrl
-      }
-    }
-    authorPicture: file(relativePath: { eq: "author.jpg" }) {
-      childImageSharp {
-        fixed(width: 40, height: 40) {
-          ...GatsbyImageSharpFixed
-        }
       }
     }
   }

@@ -14,8 +14,6 @@
     span {
       display: flex;
       justify-content: center;
-      a {
-      }
     }
   }
 
@@ -61,18 +59,12 @@
   // ****************************************************
 
   #post {
-    #post-title {
-      font-size: 2rem;
+    #post-body {
+      top: -4vw;
     }
 
-    #cover-image {
-      max-height: 500px;
-      width: auto !important;
-      img {
-        position: relative !important;
-        max-height: 500px;
-        width: 100% !important;
-      }
+    #post-title {
+      font-size: 5vw;
     }
 
     #post-content {

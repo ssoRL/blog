@@ -1,0 +1,23 @@
+<!-- Uses a 5:1 aspect ratio -->
+<svg viewBox="0 0 420 40" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .common {
+      text-anchor: start;
+      fill: #0f1b07; 
+      font-size: 40px;
+      font-family: sans-serif;
+      font-variant-caps: small-caps;
+      font-style: italic;
+    }
+    .voltage  {
+      font-weight: bolder;
+    }
+    .blog { 
+      font-style: normal;
+    }
+  </style>
+
+  <text x="5" y="35" textLength="410" class="common">
+    High<tspan class="voltage">Voltage</tspan>Clouds <tspan class="blog"> Blog</tspan>
+  </text>
+</svg>

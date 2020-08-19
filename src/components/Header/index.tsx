@@ -1,16 +1,13 @@
 import React from "react"
+// ignore
+import titleSvg from '../../assets/images/hvc-text-only.svg'
 import { navigate } from "gatsby"
-import { IPostRequest } from "./../../interfaces/requests.interface"
 
-import Socials from "./../Socials"
-
-export default ({ siteMetadata }: IPostRequest["site"]) => {
+export default () => {
   return (
     <header id="header">
-      <h1 onClick={() => navigate("/")}>{siteMetadata.title}</h1>
-      <span>
-        <Socials siteMetadata={siteMetadata} />
-      </span>
+      <img onClick={() => navigate("/")} src={titleSvg}></img>
+      <hr></hr>
     </header>
   )
 }
