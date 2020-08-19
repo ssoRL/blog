@@ -6,12 +6,6 @@ $hover-color: #542C85;
 body {
   min-height: 100vh;
   font-family: "Source Sans Pro", sans-serif;
-
-  hr {
-    border: 0;
-    border-bottom: 2px solid $dark;
-    width: 75%;
-  }
 }
 
 // ****************************************************
@@ -32,6 +26,9 @@ body {
   justify-content: space-between;
 
   hr {
+    border: 0;
+    border-bottom: 2px solid $dark;
+    width: 75%;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
   }
@@ -105,6 +102,9 @@ body {
 
     h3 {
       color: $dark;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .post-image {
@@ -352,6 +352,12 @@ body {
       strong {
         font-weight: 600;
       }
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid $dark;
+      width: 50%;
     }
 
     a {
