@@ -1,6 +1,6 @@
 ---
 title: "Riviera Whiplash"
-
+author: "Skyler Olson"
 date: "2020-01-01"
 cover: "tulum-horizon.jpeg"
 featuredImage: ./imgs/tulum-horizon.jpeg

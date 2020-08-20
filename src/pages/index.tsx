@@ -13,14 +13,14 @@ const IndexPage = ({ data }: { data: IHomeRequest }) => {
     const {
       frontmatter: {
         title,
+        author,
         date,
         featuredImage: { childImageSharp },
       },
-      timeToRead,
       excerpt,
       fields: { slug },
     } = mod.node
-    return { title, timeToRead, date, excerpt, slug, childImageSharp }
+    return { title, author, date, excerpt, slug, childImageSharp }
   })
   const { siteMetadata } = data.site
 
@@ -37,13 +37,13 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 100)
-          timeToRead
+          excerpt(pruneLength: 150)
           fields {
             slug
           }
           frontmatter {
             title
+            author
             date(formatString: "MMMM DD, YYYY")
             featuredImage {
               childImageSharp {

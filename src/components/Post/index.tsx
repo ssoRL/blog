@@ -12,19 +12,18 @@ export default ({ data }: { data: IPostRequest }) => {
   const {
     site: { siteMetadata },
     markdownRemark: {
-      frontmatter: { featuredImage, title },
+      frontmatter: { featuredImage, title, author },
       html,
     },
   } = data
   const imgProps = featuredImage.childImageSharp
   const content = data.allMarkdownRemark.edges.map(mod => {
     const {
-      frontmatter: { title, date },
-      timeToRead,
+      frontmatter: { title, author, date },
       excerpt,
       fields: { slug },
     } = mod.node
-    return { title, timeToRead, date, excerpt, slug }
+    return { title, author, date, excerpt, slug }
   })
 
   return (
@@ -37,6 +36,7 @@ export default ({ data }: { data: IPostRequest }) => {
           />
         <div id="post-body">
           <h1 id="post-title">{title}</h1>
+          <div id="post-author">by {author}</div>
           <div id="post-content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </section>
@@ -75,6 +75,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        author
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           childImageSharp {

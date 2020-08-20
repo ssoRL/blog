@@ -1,5 +1,6 @@
 ---
 title: "Calzada de Guadalupe"
+author: "Skyler Olson"
 date: "2019-12-21"
 cover: "calzada-de-guadalupe.jpeg"
 featuredImage: ./imgs/calzada-de-guadalupe.jpeg

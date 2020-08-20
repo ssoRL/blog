@@ -3,13 +3,13 @@ import { GatsbyImageProps, GatsbyImageFluidProps } from "gatsby-image/index"
 export interface IAllMarkdownRemark {
   edges: {
     node: {
-      timeToRead: Number
       excerpt: string
       fields: {
         slug: string
       }
       frontmatter: {
         title: string
+        author: string
         date: string
         featuredImage: {
           childImageSharp: GatsbyImageProps
@@ -44,6 +44,7 @@ export interface IPostRequest {
     html: string
     frontmatter: {
       title: string
+      author: string
       date: string
       featuredImage: {
         childImageSharp: GatsbyImageFluidProps

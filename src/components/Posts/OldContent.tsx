@@ -25,7 +25,7 @@ export default ({
                 <p className="post-date">{post.date}</p>
               </div>
               <p>{post.excerpt}</p>
-              <p className="to-read">{post.timeToRead} min to read</p>
+              <p className="post-author">by {post.author}</p>
             </Link>
           )
         })}

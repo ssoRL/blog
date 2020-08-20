@@ -1,5 +1,6 @@
 ---
 title: "Drawing Lines"
+author: "Skyler Olson"
 date: "2019-12-11"
 cover: "potrero-chico.jpeg"
 featuredImage: ./imgs/potrero-chico.jpeg

@@ -1,5 +1,6 @@
 ---
 title: "Vans and the Art of Camp Stove Maintenance"
+author: "Skyler Olson"
 date: "2019-11-24"
 cover: "campstove-dixie-nf.jpeg"
 featuredImage: ./imgs/campstove-dixie-nf.jpeg
