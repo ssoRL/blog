@@ -287,9 +287,8 @@ body {
 // ****************************************************
 
 #footer {
-  // position: absolute;
-  bottom: 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -297,6 +296,7 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 80px;
 
   p {
     margin-bottom: 0;
@@ -310,6 +310,16 @@ body {
 // ****************************************************
 
 #post {
+  #go-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    z-index: 2;
+    background: rgba(255,255,255,.6);
+    cursor: pointer;
+  }
+
   #post-body {
     width: 90vw;
     margin: auto;
@@ -392,11 +402,47 @@ body {
   max-width: 1140px;
 }
 
-#post-old-posts {
-  display: block;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1140px;
+#post-adjacent-posts {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  a {
+    color: $dark !important;
+    width: 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-decoration: none;
+    display: flex;
+
+    .go-to-adjacent-arrow {
+      width: 80px;
+      height: 80px;
+    }
+
+    .post-description {
+      height: 80px;
+      padding: 0 10px;
+
+      p {
+        height: 20px;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .flex-filler {
+      flex-basis: 0;
+      flex-grow: 1;
+    }
+
+    &:hover {
+      color: $hover-color !important;
+    }
+  }
 }

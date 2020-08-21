@@ -1,34 +1,29 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import "./../../assets/styles/style.scss"
+import backToMain from '../../assets/images/back-to-main.svg'
 import { IPostRequest } from "../../interfaces/requests.interface"
 
 import Img from "gatsby-image"
 import Layout from '../Layout'
-import OlderPosts from "../Posts/OldContent"
+import AdjacentPosts from "./AdjacentPosts"
 
 export default ({ data }: { data: IPostRequest }) => {
   // Helper to organize useful data in request
   const {
     site: { siteMetadata },
     markdownRemark: {
+      fields: { slug },
       frontmatter: { featuredImage, title, author },
       html,
     },
   } = data
   const imgProps = featuredImage.childImageSharp
-  const content = data.allMarkdownRemark.edges.map(mod => {
-    const {
-      frontmatter: { title, author, date },
-      excerpt,
-      fields: { slug },
-    } = mod.node
-    return { title, author, date, excerpt, slug }
-  })
 
   return (
     <Layout siteMetadata={siteMetadata} title={title}>
       <section id="post">
+          <img id="go-home" onClick={() => navigate("/")} src={backToMain}></img>
           <Img
             fluid={imgProps.fluid}
             title={title}
@@ -40,9 +35,7 @@ export default ({ data }: { data: IPostRequest }) => {
           <div id="post-content" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </section>
-      <section id="post-old-posts">
-        <OlderPosts content={content} title="Newest posts" />
-      </section>
+      <AdjacentPosts currentSlug={slug} allMarkdown={data.allMarkdownRemark} />
     </Layout>
   )
 }
@@ -50,10 +43,19 @@ export default ({ data }: { data: IPostRequest }) => {
 export const pageQuery = graphql`
   query($path: String!) {
     allMarkdownRemark(
-      limit: 4
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: ASC, fields: [frontmatter___date] }
     ) {
       edges {
+        next {
+          fields {
+            slug
+          }
+        }
+        previous {
+          fields {
+            slug
+          }
+        }
         node {
           timeToRead
           excerpt(pruneLength: 100)
@@ -62,6 +64,14 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            author
+            featuredImage {
+              childImageSharp {
+                fixed(cropFocus: CENTER, fit: COVER, height: 80, width: 80) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
             date(formatString: "MMMM DD, YYYY")
           }
         }

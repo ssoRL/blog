@@ -1,0 +1,2 @@
+have a 3:4 aspect ratio
+the strip in the vertical center should be a good visual for the top strip

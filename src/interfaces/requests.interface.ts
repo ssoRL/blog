@@ -2,6 +2,16 @@ import { GatsbyImageProps, GatsbyImageFluidProps } from "gatsby-image/index"
 
 export interface IAllMarkdownRemark {
   edges: {
+    next: {
+      fields: {
+        slug: string
+      }
+    } | null,
+    previous: {
+      fields: {
+        slug: string
+      }
+    } | null,
     node: {
       excerpt: string
       fields: {
