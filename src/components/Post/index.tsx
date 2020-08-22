@@ -21,7 +21,7 @@ export default ({ data }: { data: IPostRequest }) => {
   const imgProps = featuredImage.childImageSharp
 
   return (
-    <Layout siteMetadata={siteMetadata} title={title}>
+    <Layout siteMetadata={siteMetadata} title={`HVC Blog: ${title}`}>
       <section id="post">
           <img id="go-home" onClick={() => navigate("/")} src={backToMain}></img>
           <Img

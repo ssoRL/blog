@@ -25,7 +25,7 @@ const IndexPage = ({ data }: { data: IHomeRequest }) => {
   const { siteMetadata } = data.site
 
   return (
-    <Layout siteMetadata={siteMetadata} title="Homepage">
+    <Layout siteMetadata={siteMetadata} title="HighVoltageClouds Blog">
       <Header />
       <Posts content={content} />
     </Layout>

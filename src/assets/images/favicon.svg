@@ -1,0 +1,38 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .common { 
+      text-anchor: middle; 
+      fill: black; 
+      font-size: 35px;
+      font-family: sans-serif;
+      font-variant-caps: small-caps;
+    }
+    .high-clouds {
+      font-style: italic;
+    }
+    .voltage  {
+      font-style: italic;
+      font-weight: bold;
+    }
+  </style>
+
+  <path stroke="black" fill="lightgray" d="
+    M 65 60
+    A 15 15 0 0 0 65 30
+    A 20.1 17 0 1 0 25 30
+    A 15 15 0 0 0 25 60
+    Z" 
+  />
+
+
+  <path stroke="black" fill="#a7a738" d="
+    M 33.3 60
+    l -5 15
+    l 6 -1
+    l -5 15
+    l 25 -20
+    l -6  1
+    l 10 -10
+    Z"
+  />
+</svg>

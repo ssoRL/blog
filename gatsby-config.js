@@ -38,12 +38,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `HighVoltageClouds Blog`,
+        short_name: `HVC Blog`,
         start_url: `/`,
         background_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`,
+        icon: `src/assets/images/favicon.svg`,
       },
     },
     {
