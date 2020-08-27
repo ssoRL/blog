@@ -2,8 +2,8 @@
 title: "Reduce Reuse...Now What?"
 author: "Julia Schertzer"
 date: "2020-01-06"
-cover: "error-screen.jpeg"
-featuredImage: ./imgs/error-screen.jpeg
+cover: "dream-catchers.JPG"
+featuredImage: ./imgs/dream-catchers.JPG
 ---
 
 
